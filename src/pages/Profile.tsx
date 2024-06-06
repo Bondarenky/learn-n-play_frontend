@@ -99,7 +99,7 @@ const Profile = () => {
                     <ProfileList title="Пройдені курси">
                         <div className="flex flex-col gap-12 mt-12">
                             {mySections && mySections.map(mySection => (
-                                <PassedCourse title={mySection.title} progress={mySection.percentage?.toString()} key={mySection.id}/>
+                                <PassedCourse title={mySection.title} progress={mySection.percentage || 0} key={mySection.id}/>
                             ))}
                         </div>
                     </ProfileList>

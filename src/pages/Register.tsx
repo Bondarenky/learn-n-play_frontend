@@ -73,7 +73,9 @@ const Register: FC = () => {
         if(user === "student") {
             navigate("/students")
         }
-        navigate("/")
+        if(user === "teacher") {
+            navigate("/")
+        }
     }
 
     return (

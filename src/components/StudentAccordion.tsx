@@ -35,12 +35,20 @@ const StudentAccordion: FC<Props> = ({isTeacher = false, firstName, lastName, to
     return (
         <div className="container relative flex flex-col gap-2.5">
             <div className="flex justify-between pl-6 pr-20">
-                <button className="flex gap-5 items-center flex-1" onClick={handleActive}>
-                    <img src="arrow.png" alt="arrow" />
-                    <span className="text-4xl font-medium text-dark_green">{firstName} {lastName}</span>
-                </button>
+                {classesGrade.length !== 0 && (
+                    <button className="flex gap-5 items-center flex-1" onClick={handleActive}>
+                        <img src="arrow.png" alt="arrow" />
+                        <span className="text-4xl font-medium text-dark_green">{firstName} {lastName}</span>
+                    </button>
+                )}
+                {classesGrade.length === 0 && (
+                    <div className="px-12 flex gap-5 items-center flex-1">
+                        <div className="block w-[25px] h-auto"></div>
+                        <span className="text-4xl font-medium text-dark_green">{firstName} {lastName}</span>
+                    </div>
+                )}
                 <div className="w-[75px] h-[75px] bg-white rounded-full border-4 text-lg font-medium border-dark_green/65 text-dark_green/65 flex items-center justify-center">
-                    {totalGrade && `${totalGrade.toFixed(2)}%`}
+                    {totalGrade && `${totalGrade.toFixed(0)}%`}
                     {!totalGrade && "-"}
                 </div>
                 {isTeacher && (

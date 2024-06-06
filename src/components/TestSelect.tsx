@@ -38,7 +38,7 @@ const TestSelect: FC<Props> = ({title, id, grade, percentage}) => {
                         <Link to={`/test/${id}/${grade}`} className="text-2xl text-black px-12 border-2 border-dark_green rounded-20">Почати</Link>
                         {percentage !== null && (
                             <div className="w-12 h-12 bg-white rounded-full border-4 text-sm font-medium border-dark_green/65 text-black flex items-center justify-center">
-                                {percentage}%
+                                {percentage.toFixed(0)}%
                             </div>
                         )}
                     </>

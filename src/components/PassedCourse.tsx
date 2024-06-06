@@ -2,7 +2,7 @@ import { FC } from "react"
 
 interface Props {
     title: string;
-    progress?: string;
+    progress?: number;
 }
 
 const PassedCourse: FC<Props> = ({title, progress}) => {
@@ -14,7 +14,7 @@ const PassedCourse: FC<Props> = ({title, progress}) => {
                 </div>
                 {progress && (
                     <div className="w-[65px] h-[65px] border-4 border-dark_green/65 rounded-full bg-white flex justify-center items-center text-xl">
-                        {progress}%
+                        {progress.toFixed(0)}%
                     </div>
                 )}
             </div>

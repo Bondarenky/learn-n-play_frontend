@@ -48,7 +48,7 @@ const Students: FC = () => {
                         </div>
                         {loggedUser && loggedUser.role === "TEACHER" && (
                             <li>
-                                <NavLink to={"/sign-up/student"}>Регістрація учня</NavLink>
+                                <NavLink to={"/sign-up/student"}>Реєстрація учня</NavLink>
                             </li>
                         )}
                         <li>

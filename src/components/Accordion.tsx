@@ -43,13 +43,21 @@ const Accordion: FC<Props> = ({title, tests, sectionId, grade, sectionPercentage
         <>
             <div className="relative flex flex-col gap-2.5 max-w-[65%]">
                 <div className="flex justify-between">
-                    <button className="flex gap-5 items-center px-12" onClick={handleActive}>
-                        <img src="arrow.png" alt="arrow" />
-                        <span className="text-4xl font-medium text-dark_green">{title}</span>
-                    </button>
+                    {tests.length !== 0 && (
+                        <button className="flex gap-5 items-center px-12" onClick={handleActive}>
+                            <img src="arrow.png" alt="arrow" />
+                            <span className="text-4xl font-medium text-dark_green">{title}</span>
+                        </button>
+                    )}
+                    {tests.length === 0 && (
+                        <div className="px-12 flex gap-5 items-center">
+                            <div className="block w-[25px] h-auto"></div>
+                            <span className="text-4xl font-medium text-dark_green">{title}</span>
+                        </div>
+                    )}
                     {loggedUser && sectionPercentage !== null && loggedUser.role !== "TEACHER" && (
                         <div className="w-[75px] h-[75px] bg-white rounded-full border-4 text-2xl font-medium text-dark_green/65 flex items-center justify-center border-dark_green/65">
-                            {sectionPercentage}%
+                            {sectionPercentage.toFixed(0)}%
                         </div>
                     )}
                     {loggedUser?.role === "TEACHER" && (
