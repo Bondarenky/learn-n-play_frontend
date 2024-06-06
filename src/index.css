@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0;
+  }
+  .center-y {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .center-x {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .rounded-20 {
+    border-radius: 20px;
+  }
+
+  .rounded-r-20 {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .rounded-l-20 {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .rounded-t-20 {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .rounded-b-20 {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .profile-input::-webkit-scrollbar {
+    display: none;
+  }
+  /* .underlined {
+    position: relative;
+  }
+
+  .underlined::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: "";
+    height: 1px;
+    background-color: black;
+  } */
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #084a32a0;
+    opacity: 65%;
+    border-radius: 30px;
+    height: 52px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1440px];
+    @apply mx-auto;
+  }
+  .container-2 {
+    @apply max-w-[1508px];
+    @apply w-full;
+    @apply mx-auto;
+  }
+}
